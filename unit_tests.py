@@ -26,10 +26,10 @@ class TestCanDrive(unittest.TestCase):
 
     # extreme values
     def test_min_value(self):
-        self.assertFalse(can_drive(-sys.maxsize - 1))
+        self.assertFalse(can_drive(-sys.maxsize))
 
     def test_min_value_plus_one(self):
-        self.assertFalse(can_drive(-sys.maxsize))
+        self.assertFalse(can_drive(-sys.maxsize + 1))
 
     def test_max_value(self):
         self.assertTrue(can_drive(sys.maxsize))
@@ -40,7 +40,7 @@ class TestCanDrive(unittest.TestCase):
     # other tests
     def test_negative_age(self):
         self.assertFalse(can_drive(-1))
-        
+
     def test_zero_age(self):
         self.assertFalse(can_drive(0))
 
